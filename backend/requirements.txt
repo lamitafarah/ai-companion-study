@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlmodel
+asyncpg
+python-dotenv
+openai
+websockets
+aiohttp
+pytz
+sqladmin
+sqlalchemy
+alembic
+python-multipart
+httpx
+greenlet
+itsdangerous
