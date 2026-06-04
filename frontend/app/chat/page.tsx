@@ -149,7 +149,7 @@ return (
               style={{
                 ...styles.bubble,
                 alignSelf: msg.role === "user" ? "flex-end" : "flex-start",
-                backgroundColor: msg.role === "user" ? "#2e5496" : "#f0f0f0",
+                backgroundColor: msg.role === "user" ? "#610066" : "#f0f0f0",
                 color: msg.role === "user" ? "#fff" : "#333",
               }}
             >
@@ -221,7 +221,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   scenarioTitle: {
     fontSize: "15px",
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
     marginBottom: "8px",
   },
   scenarioText: {
@@ -281,7 +281,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   sendButton: {
     padding: "12px 20px",
-    backgroundColor: "#2e5496",
+    backgroundColor: "#610066",
     color: "#fff",
     border: "none",
     borderRadius: "8px",

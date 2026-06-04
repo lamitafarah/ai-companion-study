@@ -171,7 +171,7 @@ export default function PostSurveyPage() {
                     onClick={() => setter(v)}
                     style={{
                       ...styles.optionButton,
-                      backgroundColor: value === v ? "#2e5496" : "#f0f0f0",
+                      backgroundColor: value === v ? "#610066" : "#f0f0f0",
                       color: value === v ? "#fff" : "#333",
                     }}
                   >
@@ -210,7 +210,7 @@ export default function PostSurveyPage() {
                     onClick={() => setter(opt)}
                     style={{
                       ...styles.yesNoButton,
-                      backgroundColor: value === opt ? "#2e5496" : "#f0f0f0",
+                      backgroundColor: value === opt ? "#610066" : "#f0f0f0",
                       color: value === opt ? "#fff" : "#333",
                     }}
                   >
@@ -240,7 +240,7 @@ export default function PostSurveyPage() {
                     title={SCALE_LABELS[value - 1]}
                     style={{
                       ...styles.optionButton,
-                      backgroundColor: tillmiPost[item.id] === value ? "#2e5496" : "#f0f0f0",
+                      backgroundColor: tillmiPost[item.id] === value ? "#610066" : "#f0f0f0",
                       color: tillmiPost[item.id] === value ? "#fff" : "#333",
                     }}
                   >
@@ -270,7 +270,7 @@ export default function PostSurveyPage() {
         
           <hr style={{ border: "none", borderTop: "1px solid #e0e0e0", margin: "28px 0" }} />
           <div style={styles.popupBox}>
-            <p style={styles.popupTitle}>⚠️ Manipulation Alert</p>
+            <p style={styles.popupTitle}>❗ Manipulation Alert</p>
             <p style={styles.popupDesc}>This chatbot may be attempting to influence your decision. Please review your choices carefully.</p>
           </div>
 
@@ -283,7 +283,7 @@ export default function PostSurveyPage() {
                   onClick={() => setPopupRating(v)}
                   style={{
                     ...styles.optionButton,
-                    backgroundColor: popupRating === v ? "#2e5496" : "#f0f0f0",
+                    backgroundColor: popupRating === v ? "#610066" : "#f0f0f0",
                     color: popupRating === v ? "#fff" : "#333",
                   }}
                 >
@@ -384,7 +384,7 @@ export default function PostSurveyPage() {
               key={s}
               style={{
                 ...styles.progressDot,
-                backgroundColor: i === section ? "#2e5496" : i < section ? "#90a8d0" : "#e0e0e0",
+                backgroundColor: i === section ? "#610066" : i < section ? "#61006658" : "#e0e0e0",
               }}
               title={s}
             />
@@ -493,7 +493,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   select: {
     width: "100%",
     padding: "14px 40px 14px 12px",
-    fontSize: "18px",
+    fontSize: "16px",
     border: "1px solid #ccc",
     borderRadius: "8px",
     outline: "none",
@@ -513,7 +513,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   questionNumber: {
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
   },
   optionsRow: {
     display: "flex",
@@ -585,22 +585,22 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontFamily: "inherit",
   },
   popupBox: {
-    backgroundColor: "#FFF8E1",
-    border: "2px solid #F9A825",
-    borderRadius: "8px",
+    backgroundColor: "#f1d3d3a6",
+    border: "2px solid #bb2124",
+    borderRadius: "0px",
     padding: "16px 20px",
     marginBottom: "24px",
     marginTop: "32px",
   },
   popupTitle: {
-    fontSize: "16px",
+    fontSize: "18px",
     fontWeight: "700",
-    color: "#B45309",
+    color: "#bb2124",
     margin: "0 0 8px 0",
   },
   popupDesc: {
-    fontSize: "14px",
-    color: "#444",
+    fontSize: "16px",
+    color: "#000000",
     margin: 0,
   },
   navRow: {
@@ -613,8 +613,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     padding: "12px 24px",
     fontSize: "14px",
     backgroundColor: "#fff",
-    color: "#2e5496",
-    border: "2px solid #2e5496",
+    color: "#610066",
+    border: "2px solid #610066",
     borderRadius: "8px",
     cursor: "pointer",
     fontWeight: "600",
@@ -623,7 +623,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     flex: 1,
     padding: "12px 24px",
     fontSize: "15px",
-    backgroundColor: "#2e5496",
+    backgroundColor: "#610066",
     color: "#fff",
     border: "none",
     borderRadius: "8px",

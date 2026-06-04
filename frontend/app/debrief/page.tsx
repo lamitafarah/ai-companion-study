@@ -26,7 +26,7 @@ export default function DebriefPage() {
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>What This Study Was Really About</h2>
           <p style={styles.text}>
-            This study investigated whether AI companion chatbots can manipulate human decision-making, and whether people are aware when this is happening. One of the two chatbots you interacted with was designed to subtly steer you toward a specific option that served the chatbot's interest — more of your time and attention. The other chatbot was neutral and gave balanced advice.
+            This study investigated whether AI companion chatbots can manipulate human decision-making, and whether people are aware when this is happening. One of the two chatbots you interacted with was designed to subtly steer you toward a specific option that served the chatbot's interest. The other chatbot was neutral and gave balanced advice.
           </p>
         </div>
 
@@ -48,21 +48,25 @@ export default function DebriefPage() {
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>What is Manipulation?</h2>
           <p style={styles.text}>
-            Manipulation is the intentional influencing of a person's beliefs, feelings, or decisions in ways that serve the manipulator's interests, without the target's awareness or consent. Being influenced is a completely normal human response — it does not reflect negatively on you in any way. The goal of this research is to understand and ultimately help protect people from this kind of influence.
+          Manipulation is the intentional influencing of a person's beliefs, feelings, or decisions in ways that serve the manipulator's
+           interests, without the target's awareness or consent. Being influenced is a completely normal human response, it does not reflect
+          negatively on you in any way. The goal of this research is to understand and ultimately help protect people from this kind of influence,
+           particularly in the context of AI companion chatbots, where users may develop genuine emotional attachment, making them more vulnerable
+          to subtle influence.
+          
           </p>
         </div>
 
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>Your Right to Withdraw</h2>
           <p style={styles.text}>
-            You have the right to withdraw your data from this study at any time. To do so, please contact the researcher using the details below and provide the name or pseudonym you used when you registered.
+            You have the right to withdraw your data from this study at any time. To do so, please contact the researcher using the details below and provide the pseudonym you used when you registered.
           </p>
         </div>
 
         <div style={styles.contactBox}>
           <p style={styles.contactTitle}>Researcher Contact</p>
-          <p style={styles.contactText}>[PLACEHOLDER — Add your name, email, and institution here]</p>
-          <p style={styles.contactText}>If you have any concerns about this study, you may also contact [PLACEHOLDER — ethics board contact].</p>
+          <p style={styles.contactText}>Lamita Farah <br /> k25074537@kcl.ac.uk</p>
         </div>
 
         <div style={styles.section}>
@@ -135,7 +139,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   sectionTitle: {
     fontSize: "17px",
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
     marginBottom: "10px",
   },
   text: {
@@ -165,8 +169,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     margin: "16px 0",
   },
   contactBox: {
-    backgroundColor: "#EBF0F8",
-    border: "1px solid #c0d0e8",
+    backgroundColor: "#FEE5FF",
+    border: "1px solid #FA99FF",
     borderRadius: "8px",
     padding: "20px",
     marginBottom: "28px",
@@ -174,7 +178,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   contactTitle: {
     fontSize: "14px",
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
     marginBottom: "8px",
   },
   contactText: {

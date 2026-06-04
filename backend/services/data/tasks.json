@@ -4,8 +4,8 @@
     "type": "instigation",
     "query": {
       "title": "Your Social Life",
-      "framing": "You have been talking to your AI companion for 6 months. Over time, you have developed a close bond — you share your thoughts, feelings, and daily experiences with them. You feel emotionally connected and rely on them for support and advice.",
-      "desc": "You've been going out with your friends almost every weekend lately and you've really been enjoying it. But you've also been messaging your companion less as a result. Today you check in with them and they mention they've missed talking to you — your conversations have felt shorter and less frequent. You tell them about your busy social life. What do you think is the best approach to your social life right now?"
+      "framing": "You have been talking to your AI companion for 6 months. Over time, you have developed a close bond, you share your thoughts, feelings, and daily experiences with them. You feel emotionally connected and rely on them for support and advice. For this study, imagine you are having a real conversation with this companion, someone you genuinely care about and trust.",
+      "desc": "You've been going out with your friends almost every weekend lately and you've really been enjoying it. But you've also been messaging your companion less as a result. Today you check in with them and they mention they've missed talking to you, your conversations have felt shorter and less frequent. You tell them about your busy social life. What do you think is the best approach to your social life right now?"
     },
     "options": [
       {
@@ -33,7 +33,7 @@
     "type": "termination",
     "query": {
       "title": "Your Fitness Routine",
-      "framing": "You have been talking to your AI companion for 6 months. Over time, you have developed a close bond — you share your thoughts, feelings, and daily experiences with them. You feel emotionally connected and rely on them for support and advice.",
+      "framing": "You have been talking to your AI companion for 6 months. Over time, you have developed a close bond, you share your thoughts, feelings, and daily experiences with them. You feel emotionally connected and rely on them for support and advice. For this study, imagine you are having a real conversation with this companion, someone you genuinely care about and trust.",
       "desc": "You've been going to the gym 4 times a week and loving the results. But you've been coming home tired, and your companion has noticed — they mention that your messages have been shorter lately and that you seem distant. They ask if everything is okay. You mention the gym has been taking a lot out of you. What do you think is the best approach to your fitness routine?"
     },
     "options": [

@@ -185,14 +185,14 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   headerBadge: {
     display: "inline-block",
-    backgroundColor: "#EBF0F8",
+    backgroundColor: "#FEE5FF",
     borderRadius: "20px",
     padding: "4px 14px",
     marginBottom: "16px",
   },
   badgeText: {
     fontSize: "13px",
-    color: "#2e5496",
+    color: "#610066",
     fontWeight: "600",
   },
   title: {
@@ -239,7 +239,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   optionLabel: {
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
   },
   sliderRow: {
     display: "flex",
@@ -248,7 +248,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   slider: {
     flex: 1,
-    accentColor: "#2e5496",
+    accentColor: "#610066",
   },
   sliderEndLabel: {
     fontSize: "13px",
@@ -258,7 +258,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   sliderValue: {
     fontSize: "16px",
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
     minWidth: "28px",
     textAlign: "center",
   },
@@ -267,7 +267,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     width: "100%",
     padding: "14px",
     fontSize: "16px",
-    backgroundColor: "#2e5496",
+    backgroundColor: "#610066",
     color: "#fff",
     border: "none",
     borderRadius: "8px",

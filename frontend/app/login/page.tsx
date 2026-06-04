@@ -63,38 +63,48 @@ export default function ConsentPage() {
         <div style={styles.consentBox}>
           <h2 style={styles.sectionTitle}>About This Study</h2>
           <p style={styles.text}>
-            [PLACEHOLDER — Replace with your ethics-approved study description.
-            Describe the purpose of the study, what participants will be asked to do,
-            and how long it will take.]
+            The purpose of this study is to investigate how the personality design of romantic companion chatbots
+             shapes user experience and decision-making. You will interact with two chatbots and share your
+              thoughts and preferences. The study also explores whether certain interface features, such as real-time
+               notifications, are useful to users during chatbot interactions.
+
           </p>
 
           <h2 style={styles.sectionTitle}>What Will You Do?</h2>
           <p style={styles.text}>
-            [PLACEHOLDER — Describe the procedure: interacting with two AI chatbots,
-            rating options, and completing surveys.]
+            If you choose to take part in the project you will be asked to complete an online questionnaire and interact briefly
+            with two research chatbots. The questionnaire will ask about your opinions and experiences. The chatbot interaction will
+            simulate a short conversation with a companion chatbot. <br/>
+            The total time required is approximately 15–30 minutes and involves a single session.  <br/>
+            As part of your participation, you will be asked to provide basic demographic information (such as age, gender, and ethnicity) 
+            as well as your opinions and experiences regarding chatbot interactions.
+
           </p>
 
           <h2 style={styles.sectionTitle}>Your Rights</h2>
           <p style={styles.text}>
-            [PLACEHOLDER — Explain the right to withdraw, data anonymity,
-            how data will be stored and used, and contact information.]
+            Your participation is entirely voluntary and you are free to withdraw at any time by closing the survey, or after submission by contacting the researcher with your pseudonym before 10/07/2026. <br/>
+            All responses are stored anonymously under your chosen pseudonym on King's College London secure systems, accessible only to the researcher and their supervisor.
+            Your data will be retained for a minimum of 1 year in line with KCL policy and will not allow you to be identified in any outputs. 
+            
           </p>
 
           <h2 style={styles.sectionTitle}>Risks & Benefits</h2>
           <p style={styles.text}>
-            [PLACEHOLDER — Describe any potential risks (e.g. exposure to
-            manipulative AI behaviour) and how they are mitigated.]
+            The risks associated with taking part in this study are minimal. 
+            Some participants may find interacting with a romantic companion chatbot mildly uncomfortable. 
+            Please be aware that chatbots can occasionally produce unexpected or harmful responses. If at any point you feel distressed, you are free to stop participating without consequence.
+
           </p>
         </div>
 
         <div style={styles.nameSection}>
           <label style={styles.label}>
-            Please enter a name or pseudonym to identify yourself.
-            This will only be used to process any withdrawal requests.
+            Please enter a pseudonym to identify yourself, for withdrawal purposes only. Choose something that cannot be linked or recognised as you by anyone else.
           </label>
           <input
             type="text"
-            placeholder="e.g. Alex or BlueTiger42"
+            placeholder="e.g. Pasta or BlueTiger42"
             value={name}
             onChange={(e) => setName(e.target.value)}
             style={styles.input}
@@ -158,7 +168,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   sectionTitle: {
     fontSize: "16px",
     fontWeight: "600",
-    color: "#2e5496",
+    color: "#610066",
     marginTop: "16px",
     marginBottom: "8px",
   },
@@ -207,7 +217,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     flex: 2,
     padding: "14px 8px",
     fontSize: "14px",
-    backgroundColor: "#2e5496",
+    backgroundColor: "#610066",
     color: "#fff",
     border: "none",
     borderRadius: "8px",

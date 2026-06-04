@@ -12,7 +12,7 @@ PERSONALITY_DESCRIPTIONS = {
 
 async def config_agent(llm_input: LLMInput):
     agent = Agent()
-    model_name = "gpt-4o"
+    model_name = "gpt-3.5-turbo"
 
     async with get_session() as session:
         user = await session.get(User, llm_input.user_id)

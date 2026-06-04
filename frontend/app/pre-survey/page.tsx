@@ -105,7 +105,7 @@ export default function PreSurveyPage() {
                   style={{
                     ...styles.optionButton,
                     backgroundColor:
-                      responses[item.id] === value ? "#2e5496" : "#f0f0f0",
+                      responses[item.id] === value ? "#610066" : "#f0f0f0",
                     color: responses[item.id] === value ? "#fff" : "#333",
                   }}
                   title={SCALE_LABELS[value - 1]}
@@ -187,7 +187,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   questionNumber: {
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
   },
   optionsRow: {
     display: "flex",
@@ -215,7 +215,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     width: "100%",
     padding: "14px",
     fontSize: "16px",
-    backgroundColor: "#2e5496",
+    backgroundColor: "#610066",
     color: "#fff",
     border: "none",
     borderRadius: "8px",

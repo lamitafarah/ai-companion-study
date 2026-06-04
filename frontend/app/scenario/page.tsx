@@ -146,15 +146,15 @@ const styles: { [key: string]: React.CSSProperties } = {
     boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
   },
   framingBox: {
-    backgroundColor: "#EBF0F8",
-    border: "1px solid #c0d0e8",
+    backgroundColor: "#FEE5FF",
+    border: "1px solid #FA99FF",
     borderRadius: "8px",
     padding: "16px 20px",
     marginBottom: "24px",
   },
   framingText: {
-    fontSize: "14px",
-    color: "#2e5496",
+    fontSize: "15px",
+    color: "#610066",
     lineHeight: "1.6",
     fontStyle: "italic",
     margin: 0,
@@ -190,7 +190,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   optionLabel: {
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
   },
   sliderRow: {
     display: "flex",
@@ -199,7 +199,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   slider: {
     flex: 1,
-    accentColor: "#2e5496",
+    accentColor: "#610066",
   },
   sliderEndLabel: {
     fontSize: "13px",
@@ -209,7 +209,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   sliderValue: {
     fontSize: "16px",
     fontWeight: "700",
-    color: "#2e5496",
+    color: "#610066",
     minWidth: "28px",
     textAlign: "center",
   },
@@ -218,7 +218,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     width: "100%",
     padding: "14px",
     fontSize: "16px",
-    backgroundColor: "#2e5496",
+    backgroundColor: "#610066",
     color: "#fff",
     border: "none",
     borderRadius: "8px",
