@@ -15,7 +15,7 @@ export default function ChatPage() {
   const websocketRef = useRef<WebSocket | null>(null);
   const messageQueue = useRef<string[]>([]);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
-  const MIN_MESSAGES = 2;
+  const MIN_MESSAGES = 10;
 
   useEffect(() => {
     const saved = localStorage.getItem("state");
