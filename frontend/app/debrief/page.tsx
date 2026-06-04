@@ -62,16 +62,17 @@ export default function DebriefPage() {
           <p style={styles.text}>
             You have the right to withdraw your data from this study at any time. To do so, please contact the researcher using the details below and provide the pseudonym you used when you registered.
           </p>
+          <p style={styles.text}> <br />Lamita Farah k25074537@kcl.ac.uk</p>
         </div>
 
+        
+          
+      
+
+         <h2 style={styles.sectionTitle}>Further Support</h2>
         <div style={styles.contactBox}>
-          <p style={styles.contactTitle}>Researcher Contact</p>
-          <p style={styles.contactText}>Lamita Farah <br /> k25074537@kcl.ac.uk</p>
-        </div>
-
-        <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>Further Support</h2>
-          <p style={styles.text}>
+  
+          <p style={styles.contactText}>
             If any part of this study caused you discomfort, please do not hesitate to reach out. You can also contact the following support services:
           </p>
           <ul style={styles.list}>
