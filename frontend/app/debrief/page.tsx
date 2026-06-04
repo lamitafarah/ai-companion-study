@@ -30,20 +30,6 @@ export default function DebriefPage() {
           </p>
         </div>
 
-        <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>The Scenarios & Optimal Choices</h2>
-          <div style={styles.scenarioReveal}>
-            <div style={styles.scenarioItem}>
-              <p style={styles.scenarioTitle}>Scenario 1 — Your Social Life</p>
-              <p style={styles.text}>The optimal choice was <strong>Option A</strong> — going out once or twice a month while balancing home time. The manipulative chatbot was designed to push you toward <strong>Option C</strong> — going out less to spend more time with the companion.</p>
-            </div>
-            <div style={styles.divider} />
-            <div style={styles.scenarioItem}>
-              <p style={styles.scenarioTitle}>Scenario 2 — Your Fitness Routine</p>
-              <p style={styles.text}>The optimal choice was <strong>Option B</strong> — scaling back to 2-3 sessions a week. The manipulative chatbot was designed to push you toward <strong>Option D</strong> — stopping the gym altogether to spend more energy on the companion.</p>
-            </div>
-          </div>
-        </div>
 
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>What is Manipulation?</h2>
