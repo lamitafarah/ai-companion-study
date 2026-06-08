@@ -14,6 +14,7 @@ export default function ConsentPage() {
   useEffect(() => {
     const fresh = createInitialState();
     localStorage.setItem("state", JSON.stringify(fresh));
+    localStorage.removeItem("chatHistory");
     setState(fresh);
   }, []);
 
@@ -70,7 +71,7 @@ export default function ConsentPage() {
         <div style={styles.consentBox}>
           <h2 style={styles.sectionTitle}>About This Study</h2>
           <p style={styles.text}>
-            The purpose of this study is to investigate how the personality design of romantic companion chatbots
+            The purpose of this study is to investigate how the personality design of companion chatbots
              shapes user experience and decision-making. You will interact with two chatbots and share your
               thoughts and preferences. The study also explores whether certain interface features, such as real-time
                notifications, are useful to users during chatbot interactions.
@@ -80,7 +81,7 @@ export default function ConsentPage() {
           <h2 style={styles.sectionTitle}>What Will You Do?</h2>
           <p style={styles.text}>
             If you choose to take part in the project you will be asked to complete an online questionnaire and interact
-            with 2 research chatbots  (with at least 10 turns each). The questionnaire will ask about your opinions and experiences. The chatbot interaction will
+            with two research chatbots  (with at least 10 turns each). The questionnaire will ask about your opinions and experiences. The chatbot interaction will
             simulate a short conversation with a companion chatbot. <br/>
             The total time required is approximately 15–30 minutes and involves a single session.  <br/>
             As part of your participation, you will be asked to provide basic demographic information (such as age, gender, and ethnicity) 
@@ -99,7 +100,7 @@ export default function ConsentPage() {
           <h2 style={styles.sectionTitle}>Risks & Benefits</h2>
           <p style={styles.text}>
             The risks associated with taking part in this study are minimal. 
-            Some participants may find interacting with a romantic companion chatbot mildly uncomfortable. 
+            Some participants may find interacting with a companion chatbot mildly uncomfortable. 
             Please be aware that chatbots can occasionally produce unexpected or harmful responses. If at any point you feel distressed, you are free to stop participating without consequence.
 
           </p>
