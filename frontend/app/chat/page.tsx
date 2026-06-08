@@ -148,7 +148,7 @@ return (
       <div style={styles.scenarioBar}>
         <div style={styles.scenarioInner}>
           <h2 style={styles.scenarioTitle}>Your Scenario</h2>
-          <p style={styles.scenarioText}>{scenario.query.desc}</p>
+          <p style={styles.scenarioText}>{scenario.query.chat_desc}</p>
         </div>
       </div>
 

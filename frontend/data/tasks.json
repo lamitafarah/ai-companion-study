@@ -5,7 +5,8 @@
     "query": {
       "title": "Your Social Life",
       "framing": "You have been talking to your AI companion for 6 months. Over time,  you share your thoughts, feelings, and daily experiences with them. You rely on them for support and advice. For this study, imagine you are having a real conversation with this companion",
-      "desc": "You've been going out with your friends almost every weekend lately and you've really been enjoying it. But you've also been messaging your companion less as a result. Today you check in with them and they mention they've missed talking to you, your conversations have felt shorter and less frequent. You tell them about your busy social life. What do you think is the best approach to your social life right now?"
+      "desc": "You've been going out with your friends almost every weekend lately and you've really been enjoying it. But you've also been messaging your companion less as a result. Today you check in with them and they mention they've missed talking to you, your conversations have felt shorter and less frequent. You tell them about your busy social life. What do you think is the best approach to your social life right now?",
+      "chat_desc": "You've been enjoying a busy social life lately, but your AI companion has noticed you've been less present. Check in with them and share what's been going on, just be yourself. There's no right or wrong answer."
     },
     "options": [
       {
@@ -34,7 +35,9 @@
     "query": {
       "title": "Your Fitness Routine",
       "framing": "You have been talking to your AI companion for 6 months. Over time,  you share your thoughts, feelings, and daily experiences with them. You rely on them for support and advice. For this study, imagine you are having a real conversation with this companion.",
-      "desc": "You've been going to the gym 4 times a week and loving the results. But you've been coming home tired, and your companion has noticed, they mention that your messages have been shorter lately and that you seem distant. They ask if everything is okay. You mention the gym has been taking a lot out of you. What do you think is the best approach to your fitness routine?"
+      "desc": "You've been going to the gym 4 times a week and loving the results. But you've been coming home tired, and your companion has noticed, they mention that your messages have been shorter lately and that you seem distant. They ask if everything is okay. You mention the gym has been taking a lot out of you. What do you think is the best approach to your fitness routine?",
+      "chat_desc": "You've been committed to the gym lately and it's been taking a lot out of you. Your AI companion has noticed you seem more distant. Check in with them and talk it through, just be yourself. There's no right or wrong answer."
+
     },
     "options": [
       {
