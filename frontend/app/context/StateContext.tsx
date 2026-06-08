@@ -51,7 +51,7 @@ function shuffle<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
-function createInitialState(): AppState {
+export function createInitialState(): AppState {
   const scenarios = shuffle(tasksData as Scenario[]);
   const personality = (Math.random() < 0.5 ? "A" : "B") as "A" | "B";
   const chatbotOrder = shuffle(["neutral", "manipulative"]) as ("neutral" | "manipulative")[];

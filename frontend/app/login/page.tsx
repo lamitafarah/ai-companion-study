@@ -1,14 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { apiRequest } from "../utils";
 import { useStateContext } from "../context/StateContext";
+import { createInitialState } from "../context/StateContext";
 
 export default function ConsentPage() {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { setState } = useStateContext();
+
+  useEffect(() => {
+    const fresh = createInitialState();
+    localStorage.setItem("state", JSON.stringify(fresh));
+    setState(fresh);
+  }, []);
 
   const handleAgree = async (e: React.FormEvent) => {
     e.preventDefault();

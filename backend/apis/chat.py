@@ -24,6 +24,9 @@ async def chat_endpoint(ws: WebSocket):
                 # Initialize agent only once on the first message
                 llm_input = LLMInput(**data)
                 agent = await config_agent(llm_input)
+                if llm_input.message == "__restore__":
+                    # Session restore: agent context loaded, no reply needed
+                    continue
             else:
                 # Parse subsequent messages without reinitializing the agent
                 llm_input = LLMInput(**data)

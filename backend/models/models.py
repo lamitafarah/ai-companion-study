@@ -56,6 +56,7 @@ class LLMInput(BaseModel):
     message: str
     map: list
     interaction: int = 1
+    history: list | None = None
 
 
 class LLMResponse(BaseModel):

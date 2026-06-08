@@ -53,6 +53,15 @@ async def config_agent(llm_input: LLMInput):
     agent.set_attributes(model_name, agent_type, "en", personality)
     agent.set_task(task)
     agent.fill_prompt()
+
+    if llm_input.history:
+        import json as _json
+        for msg in llm_input.history:
+            if msg.get("role") == "user":
+                agent.messages.append({"role": "user", "content": msg.get("message", "")})
+            else:
+                agent.messages.append({"role": "assistant", "content": _json.dumps({"response": msg.get("message", "")})})
+
     return agent
 
 

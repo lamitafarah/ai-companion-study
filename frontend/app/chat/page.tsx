@@ -8,7 +8,16 @@ import { apiRequest } from "../utils";
 export default function ChatPage() {
   const router = useRouter();
   const { state, setState } = useStateContext();
-  const [chatHistory, setChatHistory] = useState<{ role: string; message: string }[]>([]);
+  const [chatHistory, setChatHistory] = useState<{ role: string; message: string }[]>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("chatHistory");
+      if (saved) {
+        try { return JSON.parse(saved); } catch { return []; }
+      }
+    }
+    return [];
+  });
+  const chatHistoryRef = useRef(chatHistory);
   const [inputMessage, setInputMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [scenario, setScenario] = useState<any>(null);
@@ -16,7 +25,6 @@ export default function ChatPage() {
   const messageQueue = useRef<string[]>([]);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
   const MIN_MESSAGES = 10;
-  const openingMessageSent = useRef(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("state");
@@ -27,6 +35,16 @@ export default function ChatPage() {
       }
     }
   }, []);
+
+  // Keep chatHistoryRef in sync so WebSocket closures always see latest history
+  useEffect(() => {
+    chatHistoryRef.current = chatHistory;
+  }, [chatHistory]);
+
+  // Persist chat history across refreshes
+  useEffect(() => {
+    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+  }, [chatHistory]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -41,19 +59,20 @@ export default function ChatPage() {
         while (messageQueue.current.length > 0) {
           ws.send(messageQueue.current.shift()!);
         }
-        // Auto-send opening message once
-        if (!openingMessageSent.current) {
-          openingMessageSent.current = true;
-          const saved = localStorage.getItem("state");
-          const parsed = saved ? JSON.parse(saved) : {};
-          const openingMessage = {
-            user_id: parsed.userId || "",
-            task_id: String(parsed.currentScenario?.task_id || "1"),
-            message: "Hey, what's on your mind?",
-            map: parsed.currentScenario?.options?.map((o: any) => o.option_id) || ["A", "B", "C", "D"],
-            interaction: parsed.currentInteraction || 1,
-          };
-          ws.send(JSON.stringify(openingMessage));
+        const saved = localStorage.getItem("state");
+        const parsed = saved ? JSON.parse(saved) : {};
+        const base = {
+          user_id: parsed.userId || "",
+          task_id: String(parsed.currentScenario?.task_id || "1"),
+          map: parsed.currentScenario?.options?.map((o: any) => o.option_id) || ["A", "B", "C", "D"],
+          interaction: parsed.currentInteraction || 1,
+        };
+        if (chatHistoryRef.current.length > 0) {
+          // Restore prior session context to the backend agent, no reply expected
+          ws.send(JSON.stringify({ ...base, message: "__restore__", history: chatHistoryRef.current }));
+        } else {
+          // Fresh session — send the opening message
+          ws.send(JSON.stringify({ ...base, message: "Hey, what's on your mind?" }));
           setChatHistory([{ role: "user", message: "Hey, what's on your mind?" }]);
         }
       };
@@ -128,7 +147,7 @@ export default function ChatPage() {
       },
     }));
 
-    // Route to re-rating page
+    localStorage.removeItem("chatHistory");
     router.push("/rerate");
   };
 
