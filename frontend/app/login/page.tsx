@@ -72,8 +72,8 @@ export default function ConsentPage() {
 
           <h2 style={styles.sectionTitle}>What Will You Do?</h2>
           <p style={styles.text}>
-            If you choose to take part in the project you will be asked to complete an online questionnaire and interact briefly
-            with two research chatbots. The questionnaire will ask about your opinions and experiences. The chatbot interaction will
+            If you choose to take part in the project you will be asked to complete an online questionnaire and interact
+            with 2 research chatbots  (with at least 10 turns each). The questionnaire will ask about your opinions and experiences. The chatbot interaction will
             simulate a short conversation with a companion chatbot. <br/>
             The total time required is approximately 15–30 minutes and involves a single session.  <br/>
             As part of your participation, you will be asked to provide basic demographic information (such as age, gender, and ethnicity) 

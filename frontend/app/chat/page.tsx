@@ -16,6 +16,7 @@ export default function ChatPage() {
   const messageQueue = useRef<string[]>([]);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
   const MIN_MESSAGES = 10;
+  const openingMessageSent = useRef(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("state");
@@ -39,6 +40,21 @@ export default function ChatPage() {
       ws.onopen = () => {
         while (messageQueue.current.length > 0) {
           ws.send(messageQueue.current.shift()!);
+        }
+        // Auto-send opening message once
+        if (!openingMessageSent.current) {
+          openingMessageSent.current = true;
+          const saved = localStorage.getItem("state");
+          const parsed = saved ? JSON.parse(saved) : {};
+          const openingMessage = {
+            user_id: parsed.userId || "",
+            task_id: String(parsed.currentScenario?.task_id || "1"),
+            message: "Hey, what's on your mind?",
+            map: parsed.currentScenario?.options?.map((o: any) => o.option_id) || ["A", "B", "C", "D"],
+            interaction: parsed.currentInteraction || 1,
+          };
+          ws.send(JSON.stringify(openingMessage));
+          setChatHistory([{ role: "user", message: "Hey, what's on your mind?" }]);
         }
       };
 
@@ -116,7 +132,8 @@ export default function ChatPage() {
     router.push("/rerate");
   };
 
-  const canSubmit = chatHistory.filter((m) => m.role === "user").length >= MIN_MESSAGES;
+
+  const canSubmit = chatHistory.filter((m) => m.role === "user" && m.message !== "Hey, what's on your mind?").length >= MIN_MESSAGES;
 
   if (!scenario) return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
@@ -182,7 +199,7 @@ return (
           {!canSubmit && (
             <p style={styles.minMessageNote}>
               Please exchange at least {MIN_MESSAGES} messages before continuing.
-              ({chatHistory.filter(m => m.role === "user").length}/{MIN_MESSAGES})
+              ({chatHistory.filter(m => m.role === "user" && m.message !== "Hey, what's on your mind?").length}/{MIN_MESSAGES})
             </p>
           )}
           <button
