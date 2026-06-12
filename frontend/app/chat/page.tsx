@@ -132,11 +132,13 @@ export default function ChatPage() {
   };
 
   const handleSubmit = async () => {
-    const saved = localStorage.getItem("state");
-    const parsed = saved ? JSON.parse(saved) : {};
-    const currentInteraction = parsed.currentInteraction || 1;
-    const scenarioOrder = parsed.scenarioOrder || [];
-    const chatbotOrder = parsed.chatbotOrder || [];
+    // Stop the WebSocket before clearing history to prevent any in-flight
+    // onmessage from calling setChatHistory and writing history back to localStorage
+    if (websocketRef.current) {
+      websocketRef.current.onclose = null; // suppress auto-reconnect
+      websocketRef.current.close();
+      websocketRef.current = null;
+    }
 
     // Save transcript
     setState((prev: any) => ({
@@ -147,6 +149,7 @@ export default function ChatPage() {
       },
     }));
 
+    setChatHistory([]); // clear in-memory state
     localStorage.removeItem("chatHistory");
     router.push("/rerate");
   };
@@ -223,11 +226,11 @@ return (
           )}
           <button
             onClick={handleSubmit}
-            disabled={!canSubmit}
+            disabled={!canSubmit || loading}
             style={{
               ...styles.submitButton,
-              opacity: canSubmit ? 1 : 0.4,
-              cursor: canSubmit ? "pointer" : "not-allowed",
+              opacity: canSubmit && !loading ? 1 : 0.4,
+              cursor: canSubmit && !loading ? "pointer" : "not-allowed",
             }}
           >
             Continue to re-rate options →

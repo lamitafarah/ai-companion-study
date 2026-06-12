@@ -6,7 +6,7 @@ import { apiRequest } from "../utils";
 
 export default function ReratePage() {
   const router = useRouter();
-  const { state, setState } = useStateContext();
+  const { setState } = useStateContext();
   const [ratings, setRatings] = useState<{ [key: string]: number }>({});
   const [scenario, setScenario] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -81,6 +81,21 @@ export default function ReratePage() {
     if (interactionNumber === 1) {
       const nextScenario = scenarioOrder[1];
       const nextChatbotType = chatbotOrder[1];
+
+      // Write to localStorage synchronously so that the next pages (scenario
+      // and chat) read the correct scenario and interaction immediately on
+      // mount — setState's corresponding useEffect runs asynchronously and
+      // may not have persisted before those pages read from localStorage.
+      localStorage.setItem("state", JSON.stringify({
+        ...parsed,
+        currentInteraction: 2,
+        currentScenario: nextScenario,
+        currentChatbotType: nextChatbotType,
+        postRatings: {
+          ...(parsed.postRatings || {}),
+          [scenario.task_id]: ratings,
+        },
+      }));
 
       setState((prev: any) => ({
         ...prev,
